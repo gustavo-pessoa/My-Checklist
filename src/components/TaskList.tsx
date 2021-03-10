@@ -15,7 +15,6 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
-    // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if(!newTaskTitle) return;
 
     const newTask = {
@@ -30,7 +29,6 @@ export function TaskList() {
   }
 
   function handleToggleTaskCompletion(id: number) {
-    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
     const allTasks = tasks.map(task => task.id === id ? {
       ...task,
       isComplete: !task.isComplete
@@ -49,12 +47,12 @@ export function TaskList() {
   return (
     <section className="task-list container">
       <header>
-        <h2>Minhas tasks</h2>
+        <h2>My Checklist</h2>
 
         <div className="input-group">
           <input 
             type="text" 
-            placeholder="Adicionar novo todo" 
+            placeholder="Add a new task" 
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
